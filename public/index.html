@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>papago</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="flex items-center flex-column gap-2rem px-2rem py-05rem min-width-800">
+    <div class="flex w-full flex-row items-center justify-between pt-2">
+        <div>
+            <img src="images/papago_icon.png" class="h-1d5rem">
+        </div>
+
+        <div class="flex flex-row gap-1rem color-gray">
+            <div>
+                <p>share</p>
+            </div>
+            <div>
+                <p>favorites</p>
+            </div>
+            <div>
+                <p>more</p>
+            </div>
+            <div>
+                <p>mypage</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex w-full items-center justify-center flex-column gap-1d5rem">
+        <div class="flex items-center justify-center flex-column">
+            <div class="flex flex-row items-center rounded-2rem border-gray2 bg-lightgray3 color-darkgray px-02rem py-02rem">
+                <div class="rounded-1rem px-1rem py-05rem">
+                    <p class="weight-600">Text</p>
+                </div>
+
+                <div class="bg-white border-green rounded-1rem px-1rem py-05rem box-shadow">
+                    <p class="color-green weight-800">Image</p>
+                </div>
+
+                <div class="rounded-1rem px-1rem py-05rem">
+                    <p class="weight-600">Document</p>
+                </div>
+
+                <div class="rounded-1rem px-1rem py-05rem">
+                    <p class="weight-600">Website</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex w-full flex-row gap-05rem">
+            <div class="flex flex-column w-1_2 border-lightgray rounded-1rem">
+                <div class="flex flex-row items-center justify-between px-1rem py-1rem color-lightblack">
+                    <div id="dropDown" class="flex flex-row items-center gap-05rem hover-pointer hover-color-green">
+                        <p id="detLan" class="text-1d2rem">언어 감지</p>
+                        <img src="images/vector_bottom_gray.png" class="h-05rem" />
+                    </div>
+
+                    <img src="images/switch_icon.png" class="h-1d5rem">
+                </div>
+
+                <div class="relative h-0 w-full top-01rem z-100">
+                    <div id="dropdownContent" class="flex w-full bg-white flex-column z-100 min-h-fit-content color-lightblack" style="display: none">
+                        <ul class="flex w-full flex-row flex-wrap p-0">
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">언어 감지</li>
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">한국어</li>
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">영어</li>
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">기타</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="m-0 w-full border-lightgray2"/>
+
+                <div class="p-1rem">
+                    <textarea id="beforeTransText" class="w-full resize-none border-0 h-12rem" placeholder="Type the text to translate"></textarea>
+                    <div class="flex w-full flex-row justify-end h-1rem">
+                        <p class="color-gray"><span id="lang" class="color-black">0</span> / 3000</p>
+                    </div>
+                </div>
+
+
+                <hr class="m-0 w-full border-lightgray2"/>
+
+                <div class="flex flex-row items-center justify-between">
+                    <div class="flex flex-row items-center color-gray">
+                        <div class="p-1rem border-right-lightgray2">
+                            <p>speak</p>
+                        </div>
+
+                        <div class="p-1rem border-right-lightgray2">
+                            <p>copy</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-lightgreen px-1rem py-1rem rounded-bottom-right-1rem">
+                        <p class="color-white">Translate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-column w-1_2 border-lightgray rounded-1rem">
+                <div class="flex flex-row items-center px-1rem py-1rem color-lightblack">
+                    <div id="dropDown2" class="flex flex-row items-center gap-05rem hover-pointer hover-color-green">
+                        <p id="transLan" class="text-1d2rem">영어</p>
+                        <img src="images/vector_bottom_gray.png" class="h-05rem" />
+                    </div>
+                </div>
+
+                <div class="relative h-0 w-full top-01rem z-100">
+                    <div id="dropdownContent2" class="flex w-full bg-white flex-column z-100 min-h-fit-content color-lightblack" style="display: none">
+                        <ul class="flex w-full flex-row flex-wrap p-0">
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">한국어</li>
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">영어</li>
+                            <li class="w-33m2rem hover-pointer hover-color-green p-1rem">기타</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="m-0 w-full border-lightgray2"/>
+
+                <div class="p-1rem">
+                    <textarea id="afterTransText" class="w-full resize-none border-0 h-13rem"></textarea>
+                </div>
+
+                <hr class="m-0 w-full border-lightgray2"/>
+
+                <div class="flex flex-row items-center color-gray">
+                    <div class="p-1rem border-right-lightgray2">
+                        <p>speak</p>
+                    </div>
+
+                    <div class="p-1rem border-right-lightgray2">
+                        <p>copy</p>
+                    </div>
+
+                    <div class="p-1rem border-right-lightgray2">
+                        <p>favorite</p>
+                    </div>
+
+                    <div class="p-1rem border-right-lightgray2">
+                        <p>share</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
