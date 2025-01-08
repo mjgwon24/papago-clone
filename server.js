@@ -29,7 +29,6 @@ app.get('/detect', (req, res) => {
     const query = req.query.query;
     console.log('detect');
     console.log(`query: ${query}`);
-    console.log(`client_id: ${CLIENT_ID}, client_secret: ${CLIENT_SECRET}`);
 
     HTTP.post(dectUrl)
         .send({ query: query })
